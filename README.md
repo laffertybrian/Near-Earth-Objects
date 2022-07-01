@@ -5,48 +5,51 @@
 
 ### Classification challenge:
 
-Tranforming descriptive near earth object data into a predictive model used to protect Earth from annihilation.
+Tranforming descriptive Near Earth Object (NEO) data into a predictive model used to protect Earth from annihilation.
 
+This project took a different turn after finding a key relationship between two features. It turned out that an untuned decision tree could protect Earth with only two features! After finding this link, I attempted to protect Earth without these key features and began training models on the reduced dataset.
 
 ### Data
-Over 4500 near earth object (NEO) oberavtions from the National Aeronautics and Space Administration. Data included information about the product (weight, fat content, category, etc.) and sales establishment infomation (size, type, etc.).
+Over 4500 near earth object (NEO) oberavtions from the National Aeronautics and Space Administration. Data included information about the objects size, orbit, speed and totaled 40 different features.
 
 
 ## Methods
-- Data cleaned and prepared using imputing and category standardization strategies
+- Addressing class imbalance with undersampling and oversampling strategies
+- Normalizing skewed data
 - Visualization of data to explore and find underlying trends
-- Analyzed data using multiple machine learning models to optimize results
+- Used Principal Component Analysis (PCA) to improve model performance
+- Analyzed data using multiple machine learning models
+- Tuned hyperparameters of top two models for improved performance
 
 ## Model
-The machine learning model selected for this project was a regression tree. This model preformed best with the data when compared with a linear regression model. After tuning hyperparameters of the regreesion tree, it produced a R^2 value of 0.5947 on the test data.
+The machine learning model preformed the best for this project was XGBoost. This model preformed best with the data when compared with a linear regression, k neareset neighbors, and random forest models. After tuning hyperparameters of the XGBoost model, it produced an accuracy score of 0.9453 on the test data.
 
 ## Results
 
 ![sample image](fig1.png)
 
-> Identified categories with opportunity for growth and product segmentation.
+> Identified key features that proved to be the secret to predicting hazardous objects.
 
 #### Histogram of the Prediction Difference
 ![sample image](fig2.png)
 
-> Visualizing the prediction differences in this way allows for clear understanding of the models performance.
+> Visualizing the key features in this way allows for a clear understanding of the relationship the model was able to find.
 
-#### Regression Tree Metrics
+#### XGBoost Model Metrics
 
--   The MSE is 738.31. This shows that the models average error is $738.31 per item prediction. The average value of Item_Outlet_Sales is $2181.29, so the error represents approximately 33% of the total sales.
--   The model can predict the Item_Outlet_Sales target within $100 dollars 14.36% of the time.
--   The model had 555 predictions that were over $1000 off of the actual value. That represents approximately 26% of the predictions.
--   49% of the values had predictions over $500 from the actual value.
+-   The XGBoost model had an accuracy score of .94539 on the dataset without the key features.
+-   The model had 40 false negatives! The worst possible option.
+-   The model had 24 false positives. Which avoids Earths destruction, but does cause world wide panic.
+-   With hyperparameter tuning the model improved its accuracy score by .02987
 
 ## Recommendations:
-- I do not recommend using the Decision Tree Model for predicting the Item_Outlet_Sales
-- Breakfast category should be expanded to increase market share
-- Location of stores matter. Future stores should be in Outlet_Location_Type of Tier 2 or above
+- When protecting Earth there is no choice besides the Decision Tree Model. It was able to predict all hazardous NEOs.
+
 
 
 
 ## Limitations & Next Steps
-The regression tree model did not perform to the level I had envisioned. As I continue to learn more about Machine Learning, I will conintue to improve this analysis and strive to improve upon the results.
+This dataset did not pan out how I had envisioned. The project does highlight the importance of data analysis and understanding the features in each dataset. As I continue to add to my machine learning knowledge I will continue to review this dataset and see if there are additional strategies I can explore.
 
 
 ### For further information
