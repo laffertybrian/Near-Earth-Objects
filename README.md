@@ -26,12 +26,12 @@ The machine learning model preformed the best for this project was XGBoost. This
 
 ## Results
 
-![sample image](fig1.png)
+![sample image](fig3.png)
 
 > Identified key features that proved to be the secret to predicting hazardous objects.
 
-#### Histogram of the Prediction Difference
-![sample image](fig2.png)
+#### Plotly 3d chart highlightly target class within dataset
+![sample image](fig4.png)
 
 > Visualizing the key features in this way allows for a clear understanding of the relationship the model was able to find.
 
